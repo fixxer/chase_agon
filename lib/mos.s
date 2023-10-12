@@ -29,13 +29,13 @@ __getchar:
 
 _mos_editline:
 __mos_editline:
-	ld iy, #2
-	add iy, sp
-	ld l, (iy)	; Address of the buffer
+    ld iy, #2
+    add iy, sp
+    ld l, (iy)	; Address of the buffer
     ld h, 1(iy)
-	ld c, 2(iy)	; Buffer length
+    ld c, 2(iy)	; Buffer length
     ld b, 3(iy)
-	ld e, 4(iy) ; 0 to not clear buffer, 1 to clear
-	ld a, #9
-	rst 0x08			; Invoke the line editor
-	ret    
+    ld e, 4(iy) ; 0 to not clear buffer, 1 to clear
+    ld a, #9
+    rst 0x08	; Invoke the line editor
+    ret    
